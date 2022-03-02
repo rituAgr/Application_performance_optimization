@@ -12,7 +12,7 @@ the acceptCount attribute). Any further simultaneous requests will receive "conn
    * [Link to tomcat document](https://tomcat.apache.org/tomcat-8.5-doc/config/http.html)
    * [Link to youtube for thread explanation](https://www.youtube.com/watch?v=76MEPTM2ARI&list=PLqq-6Pq4lTTbXZY_elyGv7IkKrfkSrX5e&index=7&ab_channel=JavaBrains)
 
-### Ways to improve performance
+### Ways to improve performance on backend
 
 1. Increase the thread pool size via  ```server.tomcat.threads.max=xxx``` config. However,
    this is temporary fix. As the risinf request call will pick up all the threads from
@@ -27,3 +27,7 @@ the acceptCount attribute). Any further simultaneous requests will receive "conn
    [Link for Hikari connection details](https://github.com/brettwooldridge/HikariCP)
    Further, the table in database can be indexed based on access pattern. This will 
    further enhance the performance for database interactions.
+4. Cache the static data on our side and implement cron job for late night to run and update
+
+### Ways to improve performance on frontend
+1. Make the api call for expandable section only when it is expanded 
